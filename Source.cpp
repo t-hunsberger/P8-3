@@ -18,6 +18,19 @@ int romanCharValue(char r) {
 	}
 }
 
+int convertRomanToInt(string s) {
+	int total = 0;
+	for (int i = 0; i < s.length(); ++i) {
+		if (i < s.length() - 1 && romanCharValue(s[i]) < romanCharValue(s[i + 1])){
+			total -= romanCharValue(s[i]);
+		}
+		else {
+			total += romanCharValue(s[i]);
+		}
+	}
+	return total;
+}
+
 int main() {
-	cout << "Value of 'I': " << romanCharValue('V') << endl;
+	cout << "XXIV " << convertRomanToInt("XXIV") << endl;
 }
