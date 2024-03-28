@@ -32,5 +32,13 @@ int convertRomanToInt(string s) {
 }
 
 int main() {
-	cout << "XXIV " << convertRomanToInt("XXIV") << endl;
+	string input;
+	while (true) {
+		cout << "Enter Roman Number or Q to quit: ";
+		getline(cin, input);
+		if(input == "Q" || input == "q")break;
+		int numWords = convertRomanToInt(input);
+		cout << input << " = " << convertRomanToInt(input) << endl;
+
+	}
 }
